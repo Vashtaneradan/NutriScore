@@ -214,6 +214,14 @@ button:hover {
     transform: skew(0deg, -12deg);
 }
 
+#resultPoints {
+    margin: 5px 0;
+}
+
+#resultScore {
+    margin: 5px 0 20px;
+}
+
 .footer {
     /*position: absolute;*/
     left: 0;

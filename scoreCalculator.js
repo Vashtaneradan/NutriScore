@@ -23,14 +23,14 @@ docReady(function () {
         let currentItem = evt.target.name;
         negativeComponentsList[currentItem] = evt.target.value;
         update(evt.target.value, currentItem);
-        evt.target.nextSibling.innerHTML = negativeComponentsCalculated[currentItem];
+        evt.target.nextSibling.querySelector('.reachedPoints').innerHTML = negativeComponentsCalculated[currentItem];
     }))
 
     positiveComponents.forEach(e => e.addEventListener('input', evt => {
         let currentItem = evt.target.name;
         positiveComponentsList[currentItem] = evt.target.value;
         update(evt.target.value, currentItem);
-        evt.target.nextSibling.innerHTML = positiveComponentsCalculated[currentItem];
+        evt.target.nextSibling.querySelector('.reachedPoints').innerHTML = positiveComponentsCalculated[currentItem];
     }))
 });
 
@@ -141,9 +141,9 @@ function update(value, index) {
 
     switch (index) {
         case 'extras':
-            if (value === 80) {
+            if (value == 80) {
                 positiveComponentsCalculated[index] = 5;
-            } else if (value > 60 && value < 80) {
+            } else if (value > 60) {
                 positiveComponentsCalculated[index] = 2;
             } else if (value > 40) {
                 positiveComponentsCalculated[index] = 1;
