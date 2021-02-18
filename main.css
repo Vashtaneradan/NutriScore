@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    padding-top: 1px;
+    margin-top: -1px;
+}
+
+head {
+    display: none;
+}
+
+header {
+    margin: 20px;
+}
+
+main {
+    margin: 10px;
+}
+
+.h1 {
+    text-align: center;
+}
+
+.h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.calculator__wrapper {
+    margin: 0 auto;
+}
+
+hr {
+    border-top: 1px dotted gray;
+    margin: 20px 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+form {
+    background-color: #E2E2E2;
+    border-radius: 5px;
+    padding: 25px;
+    margin-bottom: 35px;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    margin: 5px 0 10px 0;
+    width: 80%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #585858;
+    border-radius: 4px;
+}
+
+.point__container {
+    width: 20%;
+    padding-left: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+.reachedPoints {
+    display: inline-block;
+}
+
+button[disabled] {
+    background-color: rgba(116, 210, 40, 0.5);
+}
+
+button {
+    margin: 10px auto;
+    width: 100%;
+    border: none;
+    color: white;
+    background-color: #74C928;
+    padding: 14px 28px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    color: white;
+    background-color: #9dc46a;
+}
+
+.slidecontainer input {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    margin: 10px 0;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px;
+    height: 25px;
+    background: #000000;
+}
+
+.slider::-moz-range-thumb {
+    width: 5px;
+    height: 25px;
+    background: #000000;
+}
+
+.container {
+    width: 100%;
+    background-color: #ddd;
+    display: flex;
+}
+
+.score {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+}
+
+.e {
+    width: 40%;
+    background-color: #EF2D1A;
+}
+
+.d {
+    width: 14.45%;
+    background-color: #F4730E;
+}
+
+.c {
+    width: 14.45%;
+    background-color: #FBC801;
+}
+
+.b {
+    width: 5.45%;
+    background-color: #74C928;
+}
+
+.a {
+    width: 27.27%;
+    background-color: #0E8648;
+}
+
+#chevron {
+    position: relative;
+    text-align: center;
+    padding: 8px;
+    margin: 0 auto 40px;
+    height: 10px;
+    width: 200px;
+}
+
+#chevron:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 51%;
+    background: #74C928;
+    transform: skew(0deg, 12deg);
+}
+
+#chevron:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background: #74C928;
+    transform: skew(0deg, -12deg);
+}
+
+.footer {
+    /*position: absolute;*/
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #E2E2E2;
+    color: black;
+    text-align: left;
+    padding: 20px;
+}
+
+footer a {
+    color: #0E8648;
+}
+
+@media only screen and (min-width: 600px) {
+    main {
+        margin: 20px;
+    }
+
+    .calculator__wrapper {
+        width: 400px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .calculator__wrapper {
+        width: 500px;
+    }
+}
