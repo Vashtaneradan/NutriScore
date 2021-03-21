@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculate the nutri score on your own"/>
-    <meta name="keywords" content="Nutri Score, Nutrition, Score, Calculate"/>
+    <meta name="description" content="Berechne den Nutri Score selbst"/>
+    <meta name="keywords" content="Nutri Score, Ernährung, Score, berechnen, rechnen"/>
 
-    <title>Nutri Score Calculator</title>
+    <title>Nutri Score Rechner</title>
     <meta name="theme-color" content="#323232">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -28,7 +28,7 @@
 </head>
 <body>
 <header>
-    <h1 class="h1">Nutri Score Calculator</h1>
+    <h1 class="h1">Nutri Score Rechner</h1>
 </header>
 <main>
     <nav>
@@ -40,7 +40,7 @@
                 <div class="language__switch">
                     <label for="lang"><a href="indexDE.html">DE</a></label>
                     <label class="switch">
-                        <input type="checkbox" id="lang" class="en" checked onclick="changeLanguage()">
+                        <input type="checkbox" id="lang" class="de" onclick="changeLanguage()">
                         <span class="switcher"></span>
                     </label>
                     <label for="lang"><a href="index.html">EN</a></label>
@@ -51,26 +51,26 @@
     <div class="calculator__wrapper">
 
         <form action="" class="active form--normal" onsubmit="calculateScoreNormal(event)">
-            <h2 class="h2">Negative Components</h2>
-            <label for="kj">Energy density <span class="small">(KJ/100g)</span></label>
+            <h2 class="h2">Negative Komponenten</h2>
+            <label for="kj">Energie <span class="small">(KJ/100g)</span></label>
             <input type="number" class="component__N" id="kj" name="kj" required pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.1" title="This should be a number with up to 1 decimal places." min="0"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
 
-            <label for="fat">Saturated fats <span class="small">(g/100g)</span></label>
+            <label for="fat">Gesättigte Fettsäuren <span class="small">(g/100g)</span></label>
             <input type="number" class="component__N" id="fat" name="fat" required pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.1" title="This should be a number with up to 1 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
 
-            <label for="sugar">Simple sugar <span class="small">(g/100g)</span></label>
+            <label for="sugar">Zucker <span class="small">(g/100g)</span></label>
             <input type="number" class="component__N" id="sugar" name="sugar" required pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
 
-            <label for="salt">Salt <span class="small">(g/100g)</span></label>
+            <label for="salt">Salz <span class="small">(g/100g)</span></label>
             <input type="number" class="component__N" id="salt" name="salt" required pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="1,00"><span
                 class="point__container"><span
@@ -78,105 +78,113 @@
 
             <hr>
 
-            <h2 class="h2">Positive Components</h2>
-            <label for="extras">Fruits, vegetables, legumes, nuts
-                and rapeseed, walnut and olive oils <span class="small">(%)</span></label>
+            <h2 class="h2">Positive Komponenten</h2>
+            <label for="extras">Obst, Gemüse, Hülsenfrüchte, Schalenfrüchte, Raps-, Nuss- und Olivenöle <span
+                    class="small">(%)</span></label>
             <input type="number" class="component__P" id="extras" name="extras" required pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.1" title="This should be a number with up to 1 decimal places." min="0" max="80"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/5</span><br>
 
-            <label for="fibres">Fibres <span class="small">(g/100g)</span></label>
+            <label for="fibres">Ballaststoffe <span class="small">(g/100g)</span></label>
             <input type="number" class="component__P" id="fibres" name="fibres" required pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/5</span><br>
 
-            <label for="proteins">Proteins <span class="small">(g/100g)</span></label>
+            <label for="proteins">Eiweiß <span class="small">(g/100g)</span></label>
             <input type="number" class="component__P" id="proteins" name="proteins" required
                    pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
                    title="This should be a number with up to 2 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/5</span><br>
 
-            <button>calculate</button>
+            <button>berechnen</button>
         </form>
 
         <form action="" class="form--cheese" onsubmit="calculateScoreCheese(event)">
-            <h2 class="h2">Negative Components</h2>
-            <label for="kj__cheese">Energy density <span class="small">(KJ/100g)</span></label>
+            <h2 class="h2">Negative Komponenten</h2>
+            <label for="kj__cheese">Energie <span class="small">(KJ/100g)</span></label>
             <input type="number" class="component__N" id="kj__cheese" name="kj" required pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.1" title="This should be a number with up to 1 decimal places." min="0"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
 
-            <label for="fat__cheese">Saturated fats <span class="small">(g/100g)</span></label>
-            <input type="number" class="component__N" id="fat__cheese" name="fat" required pattern="[0-9]+([\.,][0-9]+)?"
+            <label for="fat__cheese">Gesättigte Fettsäuren <span class="small">(g/100g)</span></label>
+            <input type="number" class="component__N" id="fat__cheese" name="fat" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.1" title="This should be a number with up to 1 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
 
-            <label for="sugar__cheese">Simple sugar <span class="small">(g/100g)</span></label>
-            <input type="number" class="component__N" id="sugar__cheese" name="sugar" required pattern="[0-9]+([\.,][0-9]+)?"
+            <label for="sugar__cheese">Zucker <span class="small">(g/100g)</span></label>
+            <input type="number" class="component__N" id="sugar__cheese" name="sugar" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
 
-            <label for="salt__cheese">Salt <span class="small">(g/100g)</span></label>
-            <input type="number" class="component__N" id="salt__cheese" name="salt" required pattern="[0-9]+([\.,][0-9]+)?"
+            <label for="salt__cheese">Selz <span class="small">(g/100g)</span></label>
+            <input type="number" class="component__N" id="salt__cheese" name="salt" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="1,00"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
 
             <hr>
 
-            <h2 class="h2">Positive Components</h2>
-            <label for="extras__cheese">Fruits, vegetables, legumes, nuts
-                and rapeseed, walnut and olive oils <span class="small">(%)</span></label>
-            <input type="number" class="component__P" id="extras__cheese" name="extras" required pattern="[0-9]+([\.,][0-9]+)?"
+            <h2 class="h2">Positive Komponenten</h2>
+            <label for="extras__cheese">Obst, Gemüse, Hülsenfrüchte, Schalenfrüchte, Raps-, Nuss- und Olivenöle <span
+                    class="small">(%)</span></label>
+            <input type="number" class="component__P" id="extras__cheese" name="extras" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.1" title="This should be a number with up to 1 decimal places." min="0" max="80"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/5</span><br>
 
-            <label for="fibres__cheese">Fibres <span class="small">(g/100g)</span></label>
-            <input type="number" class="component__P" id="fibres__cheese" name="fibres" required pattern="[0-9]+([\.,][0-9]+)?"
+            <label for="fibres__cheese">Ballaststoffe <span class="small">(g/100g)</span></label>
+            <input type="number" class="component__P" id="fibres__cheese" name="fibres" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/5</span><br>
 
-            <label for="proteins__cheese">Proteins <span class="small">(g/100g)</span></label>
+            <label for="proteins__cheese">Eiweiß <span class="small">(g/100g)</span></label>
             <input type="number" class="component__P" id="proteins__cheese" name="proteins" required
                    pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
                    title="This should be a number with up to 2 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/5</span><br>
 
-            <button>calculate</button>
+            <button>berechnen</button>
         </form>
 
         <form action="" class="form--water" onsubmit="calculateScoreLiquid(event)">
-            <p>For water, the score A always applies</p>
-            <h2 class="h2">Negative Components</h2>
-            <label for="kj__water">Energy density <span class="small">(KJ/100g)</span></label>
-            <input type="number" class="component__N water" id="kj__water" name="kj" required pattern="[0-9]+([\.,][0-9]+)?"
+            <p>Für Wasser bleibt der Score immer bei A</p>
+            <h2 class="h2">Negative Komponenten</h2>
+            <label for="kj__water">Energie <span class="small">(KJ/100g)</span></label>
+            <input type="number" class="component__N water" id="kj__water" name="kj" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.1" title="This should be a number with up to 1 decimal places." min="0"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
 
-            <label for="fat__water">Saturated fats <span class="small">(g/100g)</span></label>
+            <label for="fat__water">Gesättigte Fettsäuren <span class="small">(g/100g)</span></label>
             <input type="number" class="component__N" id="fat__water" name="fat" required pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.1" title="This should be a number with up to 1 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
 
-            <label for="sugar__water">Simple sugar <span class="small">(g/100g)</span></label>
-            <input type="number" class="component__N water" id="sugar__water" name="sugar" required pattern="[0-9]+([\.,][0-9]+)?"
+            <label for="sugar__water">Zucker <span class="small">(g/100g)</span></label>
+            <input type="number" class="component__N water" id="sugar__water" name="sugar" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
 
-            <label for="salt__water">Salt <span class="small">(g/100g)</span></label>
-            <input type="number" class="component__N" id="salt__water" name="salt" required pattern="[0-9]+([\.,][0-9]+)?"
+            <label for="salt__water">Salz <span class="small">(g/100g)</span></label>
+            <input type="number" class="component__N" id="salt__water" name="salt" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="1,00"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
@@ -184,20 +192,22 @@
             <hr>
 
             <h2 class="h2">Positive Components</h2>
-            <label for="extras__water">Fruits, vegetables, legumes, nuts
-                and rapeseed, walnut and olive oils <span class="small">(%)</span></label>
-            <input type="number" class="component__P water" id="extras__water" name="extras" required pattern="[0-9]+([\.,][0-9]+)?"
+            <label for="extras__water">Obst, Gemüse, Hülsenfrüchte, Schalenfrüchte, Raps-, Nuss- und Olivenöle <span
+                    class="small">(%)</span></label>
+            <input type="number" class="component__P water" id="extras__water" name="extras" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.1" title="This should be a number with up to 1 decimal places." min="0" max="80"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/5</span><br>
 
-            <label for="fibres__water">Fibres <span class="small">(g/100g)</span></label>
-            <input type="number" class="component__P" id="fibres__water" name="fibres" required pattern="[0-9]+([\.,][0-9]+)?"
+            <label for="fibres__water">Ballaststoffe <span class="small">(g/100g)</span></label>
+            <input type="number" class="component__P" id="fibres__water" name="fibres" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/5</span><br>
 
-            <label for="proteins__water">Proteins <span class="small">(g/100g)</span></label>
+            <label for="proteins__water">Eiweiß <span class="small">(g/100g)</span></label>
             <input type="number" class="component__P" id="proteins__water" name="proteins" required
                    pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
                    title="This should be a number with up to 2 decimal places." min="0" max="100"><span
@@ -230,7 +240,7 @@
 
 <footer class="footer">
     <p>
-        All Information are based on the Files from the <a
+        Alle Informationen basieren auf den Informationen vom <a
             href="https://www.bmel.de/DE/themen/ernaehrung/lebensmittel-kennzeichnung/freiwillige-angaben-und-label/nutri-score/naehrwertkennzeichnung-hilfestellungen.html"
             lang="de">Bundesministerium
         für Ernährung und Landwirtschaft</a>
