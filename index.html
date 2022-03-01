@@ -23,8 +23,11 @@
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="main.css">
 
+    <script src="https://unpkg.com/html5-qrcode"></script>
     <script src="scoreCalculator.js"></script>
     <script src="controls.js"></script>
+    <script src="scanner.js"></script>
+    <script src="nutriAPI.js"></script>
 </head>
 <body>
 <header>
@@ -111,19 +114,22 @@
                 class="reachedPoints">0</span>/10</span><br>
 
             <label for="fat__cheese">Saturated fats <span class="small">(g/100g)</span></label>
-            <input type="number" class="component__N" id="fat__cheese" name="fat" required pattern="[0-9]+([\.,][0-9]+)?"
+            <input type="number" class="component__N" id="fat__cheese" name="fat" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.1" title="This should be a number with up to 1 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
 
             <label for="sugar__cheese">Simple sugar <span class="small">(g/100g)</span></label>
-            <input type="number" class="component__N" id="sugar__cheese" name="sugar" required pattern="[0-9]+([\.,][0-9]+)?"
+            <input type="number" class="component__N" id="sugar__cheese" name="sugar" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
 
             <label for="salt__cheese">Salt <span class="small">(g/100g)</span></label>
-            <input type="number" class="component__N" id="salt__cheese" name="salt" required pattern="[0-9]+([\.,][0-9]+)?"
+            <input type="number" class="component__N" id="salt__cheese" name="salt" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="1,00"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
@@ -133,13 +139,15 @@
             <h2 class="h2">Positive Components</h2>
             <label for="extras__cheese">Fruits, vegetables, legumes, nuts
                 and rapeseed, walnut and olive oils <span class="small">(%)</span></label>
-            <input type="number" class="component__P" id="extras__cheese" name="extras" required pattern="[0-9]+([\.,][0-9]+)?"
+            <input type="number" class="component__P" id="extras__cheese" name="extras" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.1" title="This should be a number with up to 1 decimal places." min="0" max="80"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/5</span><br>
 
             <label for="fibres__cheese">Fibres <span class="small">(g/100g)</span></label>
-            <input type="number" class="component__P" id="fibres__cheese" name="fibres" required pattern="[0-9]+([\.,][0-9]+)?"
+            <input type="number" class="component__P" id="fibres__cheese" name="fibres" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/5</span><br>
@@ -158,7 +166,8 @@
             <p>For water, the score A always applies</p>
             <h2 class="h2">Negative Components</h2>
             <label for="kj__water">Energy density <span class="small">(KJ/100g)</span></label>
-            <input type="number" class="component__N water" id="kj__water" name="kj" required pattern="[0-9]+([\.,][0-9]+)?"
+            <input type="number" class="component__N water" id="kj__water" name="kj" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.1" title="This should be a number with up to 1 decimal places." min="0"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
@@ -170,13 +179,15 @@
                 class="reachedPoints">0</span>/10</span><br>
 
             <label for="sugar__water">Simple sugar <span class="small">(g/100g)</span></label>
-            <input type="number" class="component__N water" id="sugar__water" name="sugar" required pattern="[0-9]+([\.,][0-9]+)?"
+            <input type="number" class="component__N water" id="sugar__water" name="sugar" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
 
             <label for="salt__water">Salt <span class="small">(g/100g)</span></label>
-            <input type="number" class="component__N" id="salt__water" name="salt" required pattern="[0-9]+([\.,][0-9]+)?"
+            <input type="number" class="component__N" id="salt__water" name="salt" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="1,00"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/10</span><br>
@@ -186,13 +197,15 @@
             <h2 class="h2">Positive Components</h2>
             <label for="extras__water">Fruits, vegetables, legumes, nuts
                 and rapeseed, walnut and olive oils <span class="small">(%)</span></label>
-            <input type="number" class="component__P water" id="extras__water" name="extras" required pattern="[0-9]+([\.,][0-9]+)?"
+            <input type="number" class="component__P water" id="extras__water" name="extras" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.1" title="This should be a number with up to 1 decimal places." min="0" max="80"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/5</span><br>
 
             <label for="fibres__water">Fibres <span class="small">(g/100g)</span></label>
-            <input type="number" class="component__P" id="fibres__water" name="fibres" required pattern="[0-9]+([\.,][0-9]+)?"
+            <input type="number" class="component__P" id="fibres__water" name="fibres" required
+                   pattern="[0-9]+([\.,][0-9]+)?"
                    step="0.01" title="This should be a number with up to 2 decimal places." min="0" max="100"><span
                 class="point__container"><span
                 class="reachedPoints">0</span>/5</span><br>
@@ -206,6 +219,20 @@
 
             <button>calculate</button>
         </form>
+
+        <button type="button" class="button open" onclick="openForm(); initScanner();">
+            <img src="barcode-scanner.png" alt="scanner opener">
+        </button>
+        <div class="scan-popup" id="myForm">
+            <h2 class="h2">scanner</h2>
+            <div id="qr-reader" style="width:300px"></div>
+            <div id="qr-reader-results"></div>
+            <button type="button" class="button cancel" onclick="closeForm()">Close</button>
+        </div>
+
+        <div class="scannerResult">
+
+        </div>
 
         <div id="chevron"></div>
 
@@ -244,7 +271,14 @@
         <li>
             <a href="https://www.bmel.de/SharedDocs/Downloads/DE/_Ernaehrung/Lebensmittel-Kennzeichnung/nutri-score-dt-excel-berechnungstabelle.xlsx?__blob=publicationFile&v=3"
                lang="de">Excel
-                file for calculation</a></li>
+                file for calculation</a>
+        </li>
+        <li>
+            <a href="https://www.flaticon.com/free-icons/barcode" title="barcode icons">Barcode icons created by DinosoftLabs - Flaticon</a>
+        </li>
+        <li>
+            <a href="https://openfoodfacts.github.io/api-documentation/" title="Food API">Nutrition/Food API</a>
+        </li>
     </ul>
 
 </footer>
@@ -254,7 +288,8 @@
     UpUp.start({
         'content-url': 'offline.html',
         'assets': [
-            'main.css', 'normalize.css', 'scoreCalculator.js', 'controls.js',
+            'main.css', 'normalize.css', 'scoreCalculator.js', 'controls.js', 'scanner.js', 'nutriAPI.js',
+            'https://unpkg.com/html5-qrcode',
             'https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,700;1,600&display=swap',
         ],
         'service-worker-url': 'upup.sw.js'

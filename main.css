@@ -378,3 +378,54 @@ footer a {
         width: 500px;
     }
 }
+
+.open {
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    z-index: 20;
+    width: auto;
+    background-color: #008891;
+    padding: 0;
+}
+
+.open img {
+    height: auto;
+    width: 55px;
+    padding: 5px;
+}
+
+.scan-popup {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 50px;
+    width: auto;
+    z-index: 20;
+    padding: 10px;
+    background-color: #008891;
+}
+
+.scan-popup h2 {
+    color: white;
+}
+
+.scan-popup .cancel {
+    background-color: #b13535;
+}
+
+.scan-popup .button:hover, .open-button:hover {
+    opacity: 1;
+}
+
+#qr-reader {
+    border: none !important;
+}
+
+#qr-reader__dashboard_section button {
+    width: 90%;
+}
+
+#qr-reader__dashboard_section button:hover {
+    background-color: #00587a;
+}

@@ -23,8 +23,11 @@
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="main.css">
 
+    <script src="https://unpkg.com/html5-qrcode"></script>
     <script src="scoreCalculator.js"></script>
     <script src="controls.js"></script>
+    <script src="scanner.js"></script>
+    <script src="nutriAPI.js"></script>
 </head>
 <body>
 <header>
@@ -217,6 +220,17 @@
             <button>calculate</button>
         </form>
 
+        <button type="button" class="button open" onclick="openForm(); initScanner();">
+            <img src="barcode-scanner.png" alt="scanner opener">
+        </button>
+        
+        <div class="scan-popup" id="myForm">
+            <h1>Scanner</h1>
+            <div id="qr-reader" style="width:300px"></div>
+            <div id="qr-reader-results"></div>
+            <button type="button" class="button cancel" onclick="closeForm()">schließen</button>
+        </div>
+
         <div id="chevron"></div>
 
         <div id="resultPoints"></div>
@@ -255,6 +269,12 @@
             <a href="https://www.bmel.de/SharedDocs/Downloads/DE/_Ernaehrung/Lebensmittel-Kennzeichnung/nutri-score-dt-excel-berechnungstabelle.xlsx?__blob=publicationFile&v=3"
                lang="de">Excel
                 file for calculation</a></li>
+        <li>
+            <a href="https://www.flaticon.com/free-icons/barcode" title="barcode icons">Barcode icons created by DinosoftLabs - Flaticon</a>
+        </li>
+        <li>
+            <a href="https://openfoodfacts.github.io/api-documentation/" title="Food API">Nutrition/Food API</a>
+        </li>
     </ul>
 
 </footer>
@@ -264,7 +284,8 @@
     UpUp.start({
         'content-url': 'offline.html',
         'assets': [
-            'main.css', 'normalize.css', 'scoreCalculator.js', 'controls.js',
+            'main.css', 'normalize.css', 'scoreCalculator.js', 'controls.js', 'scanner.js', 'nutriAPI.js',
+            'https://unpkg.com/html5-qrcode',
             'https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,700;1,600&display=swap',
         ],
         'service-worker-url': 'upup.sw.js'

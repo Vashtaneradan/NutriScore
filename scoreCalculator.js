@@ -19,7 +19,7 @@ docReady(function () {
     const positiveComponents = document.querySelectorAll('.component__P');
 
 
-    negativeComponents.forEach(e => e.addEventListener('input', evt => {
+    negativeComponents.forEach(e => e.addEventListener('change', evt => {
         let currentItem = evt.target.name;
         negativeComponentsList[currentItem] = evt.target.value;
         console.log(evt.target.classList);
@@ -32,7 +32,7 @@ docReady(function () {
         evt.target.nextSibling.querySelector('.reachedPoints').innerHTML = negativeComponentsCalculated[currentItem];
     }))
 
-    positiveComponents.forEach(e => e.addEventListener('input', evt => {
+    positiveComponents.forEach(e => e.addEventListener('change', evt => {
         let currentItem = evt.target.name;
         positiveComponentsList[currentItem] = evt.target.value;
         console.log(evt.target);
