@@ -48,7 +48,7 @@ function displayScannerResult(product) {
 
     document.querySelector('.scannerResult').innerHTML = `
         <p>Produkt: ${product.product_name_de}</p>
-        <p>Marke: ${product.brand}</p>
+        <p>Marke: ${product.brands}</p>
         <p>Füllmenge: ${product.quantity}</p>
         <p>eco score: ${product.ecoscore_grade}</p>
         <img src="${product.image_front_small_url}" alt="product image">`

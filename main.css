@@ -371,6 +371,10 @@ footer a {
     .calculator__wrapper, nav {
         width: 400px;
     }
+
+    .scan-popup {
+        right: 50px;
+    }
 }
 
 @media only screen and (min-width: 992px) {
@@ -399,7 +403,7 @@ footer a {
     display: none;
     position: fixed;
     bottom: 80px;
-    right: 50px;
+    right: 0;
     width: auto;
     z-index: 20;
     padding: 10px;
