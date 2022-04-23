@@ -8,7 +8,7 @@
     >
       <v-row>
         <v-col
-            cols="10"
+            cols="9"
         >
           <v-text-field
               :label="type"
@@ -20,7 +20,7 @@
 
         </v-col>
         <v-col
-            cols="2"
+            cols="3"
             class="updatedCalculation"
         >
           <span v-if="foodType === 'Food' || foodType === 'Cheese'"> {{ calculatedItemFood }}/</span>
@@ -41,7 +41,7 @@ export default {
 
   data() {
     return {
-      value: 0
+      value: null
     }
   },
 
