@@ -6,5 +6,7 @@ module.exports = defineConfig({
 
   pwa: {
     name: 'NutriCalculator'
-  }
+  },
+
+  publicPath: '/NutriScore'
 })
